@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "Del's Theatre",
+    "slug": "dels-theatre",
+    "scheme": "delstheatre",
+    "plugins": [
+      "expo-asset"
+    ],
+    "android": {
+      "package": "com.anonymous.delstheatre"
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.delstheatre"
+    }
+  }
+}

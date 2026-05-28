@@ -1,0 +1,14 @@
+import { Router } from 'express';
+import { addShow, addShowtime, deleteShow, deleteShowtime, editShow, editShowtime, getShow, listShows, listShowtimes } from '../controllers/showController.js';
+import { authenticate, authorize } from '../middleware/authMiddleware.js';
+const router = Router();
+router.get('/', listShows);
+router.get('/meta/showtimes', listShowtimes);
+router.post('/meta/showtimes', authenticate, authorize('admin'), addShowtime);
+router.put('/meta/showtimes/:id', authenticate, authorize('admin'), editShowtime);
+router.delete('/meta/showtimes/:id', authenticate, authorize('admin'), deleteShowtime);
+router.get('/:id', getShow);
+router.post('/', authenticate, authorize('admin'), addShow);
+router.put('/:id', authenticate, authorize('admin'), editShow);
+router.delete('/:id', authenticate, authorize('admin'), deleteShow);
+export default router;
